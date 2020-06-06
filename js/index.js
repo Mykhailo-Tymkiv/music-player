@@ -107,15 +107,6 @@ nextBtn.addEventListener('click', nextSong);
 
 // Time/song update
 audio.addEventListener('timeupdate', updateProgress);
-
-// Click on progress bar
-progressContainer.addEventListener('click', setProgress);
-
-// Song ends
-audio.addEventListener('ended', nextSong);
-
-audio.addEventListener('timeupdate', updateProgress);
-
 function updateProgress() {
   let minutes = Math.floor(audio.currentTime / 60);
   let seconds = Math.floor(audio.currentTime - minutes * 60);
@@ -137,5 +128,12 @@ function updateProgress() {
   let audioTime = minuteValue + ':' + secondValue;
   timer.textContent = audioTime;
 }
+
+// Click on progress bar
+progressContainer.addEventListener('click', setProgress);
+
+// Song ends
+audio.addEventListener('ended', nextSong);
+
 
 
